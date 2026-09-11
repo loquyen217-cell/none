@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: #0b5fa5;
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+}
+
+header h1 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+/* MENU & SUBMENU */
+nav {
+  background: #083f70;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Thẻ li cấp 1 làm mốc cho submenu */
+.menu > li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 24px;
+  font-weight: bold;
+}
+
+.menu > li:hover > a {
+  background: #0b5fa5;
+}
+
+/* SUBMENU (Định vị Absolute) */
+.submenu {
+  display: none;             /* Mặc định ẩn */
+  position: absolute;        /* Đặt theo vị trí thẻ li mẹ */
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background: #ffffff;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 6px 6px;
+  z-index: 999;
+}
+
+.submenu li a {
+  color: #333;
+  padding: 12px 16px;
+  font-weight: normal;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu li a:hover {
+  background: #f4f6f8;
+  color: #0b5fa5;
+}
+
+/* KÍCH HOẠT HIỆN SUBMENU KHI HOVER VÀO LI MẸ */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* BỐ CỤC CONTENT (GRID VIEW 75% - 25%) */
+.content {
+  width: 92%;
+  max-width: 1200px;
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+/* ARTICLE & BADGE NEW */
+article {
+  position: relative;        /* Làm mốc cho badge NEW */
+  background: white;
+  padding: 20px;
+  border: 1px solid #d7dce1;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+article h2 {
+  color: #0b5fa5;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+article p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.badge {
+  position: absolute;       /* Định vị tuyệt đối ở góc trên bên phải card */
+  top: 15px;
+  right: 15px;
+  background: #e53935;
+  color: white;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* SIDEBAR (ASIDE) */
+aside {
+  background: white;
+  padding: 20px;
+  border: 1px solid #d7dce1;
+  border-radius: 6px;
+  height: fit-content;
+}
+
+aside h3 {
+  color: #0b5fa5;
+  border-bottom: 2px solid #0b5fa5;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+aside ul {
+  padding-left: 20px;
+}
+
+aside li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+  background: #083f70;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 30px;
+  font-size: 14px;
+}
